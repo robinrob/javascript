@@ -1,23 +1,25 @@
 var gulp        = require('gulp');
-var browserSync = require('browser-sync');
-var reload      = browserSync.reload
+var browsersync = require('browser-sync');
+var reload      = browsersync.reload
 var watch       = require('gulp-watch');
 var haml        = require('gulp-ruby-haml');
 var changed     = require('gulp-changed');
 var cache     = require('gulp-cached');
+var runsequence = require('run-sequence')
+var gcallback = require('gulp-callback')
 
 var messages = {
-  haml: '<span style="color: grey">Running:</span> $ haml'
+  hamlBuild: '<span style="color: grey">Running:</span> $ haml'
 };
 
 gulp.task('reload', function () {
   console.log("RELOAD")
-  browserSync.reload()
+  browsersync.reload()
 });
 
 
 gulp.task('browser-sync', function() {
-  browserSync({
+  browsersync({
     server: {
       baseDir: '.'
     },
@@ -25,53 +27,26 @@ gulp.task('browser-sync', function() {
   });
 });
 
-// gulp.task('haml', function () {
-//   browserSync.notify(messages.haml);
-//
-//   var locations = ['.']
-//
-//   locations.forEach(function(location) {
-//     console.log("Converting HAML to HTML in: " + location)
-//     gulp.src([location + '/*.haml'])
-//     .pipe(haml())
-//     .pipe(gulp.dest(location));
-//   })
-//
-//   setTimeout(function(){
-//     browserSync.reload()
-//   }, 750)
-// });
-
-
 // Watch for changes in Haml files
-// gulp.task('haml-watch', function() {
-//   gulp.src('./*.haml').
-//        pipe(cache('robin')).
-//        pipe(watch('./*.haml')).
-//        pipe(changed('./*.haml')).
-//        pipe(haml()).
-//        pipe(gulp.dest('.'))
-// });
-
-gulp.task('haml-build', function() {
+gulp.task('haml-watch', function() {
+  console.log("Processing HAML ...")
+  var dest = '.'
   gulp.src('./*.haml').
-       pipe(haml()).
-       pipe(gulp.dest('.'))
+    pipe(watch('./*.haml')).
+    pipe(changed(dest, {extension: '.html'})).
+    pipe(haml()).
+    pipe(gulp.dest(dest)).
+    pipe(gcallback(function(){
+      reload()
+    }))
 });
 
-// gulp.task('rebuild', function() {
-//   return gulp.src('./*.haml').
-//        pipe(cache('robin')).
-//        pipe(changed('./*.haml')).
-//        pipe(haml()).
-//        pipe(gulp.dest('.'))
-// });
+gulp.task('reload', function() {
+  reload()
+})
 
 gulp.task('watch', function () {
-  gulp.src('./*.haml').
-       pipe(cache('robin')).
-       pipe(watch('./*.haml', ['haml-build', 'reload']))
-  gulp.watch(['*.js'], ['reload']);
+  gulp.watch('*.haml', function(){runsequence('haml-build')})
 });
 
-gulp.task('default', ['browser-sync', 'watch']);
+gulp.task('default', ['browser-sync', 'haml-watch']);

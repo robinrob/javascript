@@ -168,21 +168,3 @@ gulp.task('browserify', function() {
 gulp.task('clean', function() {
   del(['dist/*', '!dist/site.css'])
 })
-//
-// Watch for changes in Haml files
-// gulp.task('haml-watch', function() {
-//   gulp.src('./*.haml').
-//        pipe(cache('robin')).
-//        pipe(watch('./*.haml')).
-//        pipe(changed('./*.haml')).
-//        pipe(haml()).
-//        pipe(gulp.dest('.'))
-// });
-
-gulp.task('haml', function() {
-  gulp.src('./*.haml').
-       pipe(cache('robin')).
-       pipe(changed('./*.haml')).
-       pipe(haml()).
-       pipe(gulp.dest('.'))
-});
