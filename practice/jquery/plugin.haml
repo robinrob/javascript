@@ -7,6 +7,20 @@
     :javascript
       console.clear()
     :css
+      .accordion {
+        width: 500px;
+        border: 1px solid black;
+      }
+      
+      .accordion h2 {
+        padding: 5px;
+        margin: 0;
+        background: #ddd;
+      }
+      
+      .accordion p {
+        padding: 0 5px;
+      }
 
   %body
     #div1 Hello
@@ -16,8 +30,35 @@
     #div5 Hello
     #div6 Hello
     #div7 Hello
+    %div Bye
+
+    .accordion 
+      %h2 Heading 1
+      %p
+        Paragraph blah blah blah. Paragraph blah blah blah. Paragraph blah blah blah. Paragraph blah blah blah. 
+        Paragraph blah blah blah. Paragraph blah blah blah. Paragraph blah blah blah. Paragraph blah blah blah. 
+        Paragraph blah blah blah. Paragraph blah blah blah. Paragraph blah blah blah. Paragraph blah blah blah. 
+        Paragraph blah blah blah. Paragraph blah blah blah. Paragraph blah blah blah. Paragraph blah blah blah. 
+        Paragraph blah blah blah. Paragraph blah blah blah. Paragraph blah blah blah. Paragraph blah blah blah. 
+      %h2 Heading 2
+      %p
+        Gypsies haha. Gypsies haha. Gypsies haha. Gypsies haha. Gypsies haha. Gypsies haha. Gypsies haha. 
+        Gypsies haha. Gypsies haha. Gypsies haha. Gypsies haha. Gypsies haha. Gypsies haha. Gypsies haha. 
+        Gypsies haha. Gypsies haha. Gypsies haha. Gypsies haha. Gypsies haha. Gypsies haha. Gypsies haha. 
+        Gypsies haha. Gypsies haha. Gypsies haha. Gypsies haha. Gypsies haha. Gypsies haha. Gypsies haha. 
+        Gypsies haha. Gypsies haha. Gypsies haha. Gypsies haha. Gypsies haha. Gypsies haha. Gypsies haha. 
+      %h2 Heading 3
+      %p
+        Let's go girls! Let's go girls! Let's go girls! Let's go girls! Let's go girls! Let's go girls! 
+        Oh you missed it! Oh you missed it! Oh you missed it! Oh you missed it! Oh you missed it! 
+        Do it next time yeah. Do it next time yeah. Do it next time yeah. Do it next time yeah. 
+        Let's go girls! Let's go girls! Let's go girls! Let's go girls! Let's go girls! Let's go girls! 
+        Oh you missed it! Oh you missed it! Oh you missed it! Oh you missed it! Oh you missed it! 
+
   %footer
     %script{:src => "lib/jquery.js", :type => "text/javascript"}
     %script{:src => "lib/jquery-ui/jquery-ui.js", :type => "text/javascript"}
     %script{:src => "logid.jquery.js", :type => "text/javascript"}
+    %script{:src => "logattr.jquery.js", :type => "text/javascript"}
+    %script{:src => "accordion.jquery.js", :type => "text/javascript"}
     %script{:src => "plugin.js", :type => "text/javascript"}

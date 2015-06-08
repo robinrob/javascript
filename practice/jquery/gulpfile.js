@@ -7,10 +7,17 @@ var changed     = require('gulp-changed');
 var cache     = require('gulp-cached');
 var runsequence = require('run-sequence')
 var gcallback = require('gulp-callback')
+var plumber = require('gulp-plumber')
+require('shelljs/global')
 
 var messages = {
   hamlBuild: '<span style="color: grey">Running:</span> $ haml'
 };
+
+function onError(err) {
+  console.log(err)
+  exec('say what the fuck')
+}
 
 gulp.task('reload', function () {
   browsersync.reload()
@@ -30,6 +37,9 @@ gulp.task('browser-sync', function() {
 gulp.task('haml-watch', function() {
   var dest = '.'
   gulp.src('./*.haml').
+    pipe(plumber({
+      onError: onError
+    })).
     pipe(watch('./*.haml')).
     pipe(changed(dest, {extension: '.html'})).
     pipe(haml()).
