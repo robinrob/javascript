@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xml_http_request</title>
+
+
+</head>
+<body>
+<script type="text/javascript" src="../../lib/browser/log.js"></script>
+
+<script type="text/javascript">
+
+
+    var req = new XMLHttpRequest();
+
+    req.onreadystatechange = myCallback;
+
+    req.onreadystatechange = (function(req){
+        return function(){myCallback(req);}
+    })(req);
+
+    req.open('GET', 'http://mrrobinsmith.com/download_cv', true);
+
+    /*The method send() accepts any data you want to send with the request.
+     For GET requests, this is an empty string, because the data is in the URL.
+     For POST request, it's a query string in the form key=value&key2=value2.*/
+    req.send('');
+
+    /*There is a property of the XHR object called readyState. Every time it changes, the readystatechange event fires. The possible values of the readyState property are as follows:
+
+     0—uninitialized
+     1—loading
+     2—loaded
+     3—interactive
+     4—complete*/
+
+    function myCallback(req) {
+        if (req.readyState < 4) {
+            return; // not ready yet
+        }
+        if (req.status !== 200) {
+            alert('Error!'); // the HTTP status code is not OK
+            return;
+        }
+        //  all is fine, do the work
+        alert(req.responseText);
+    }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+[submodule "projects/boiler-plate"]
+  path = projects/boiler-plate
+  url = git@github.com:robinrob/boiler-plate.git
+[submodule "projects/bouncing-balls"]
+  path = projects/bouncing-balls
+  url = git@github.com:robinrob/bouncing-balls.git
+[submodule "projects/cocos-examples"]
+  path = projects/cocos-examples
+  url = git@github.com:robinrob/cocos-examples.git
+[submodule "projects/concentration-game"]
+  path = projects/concentration-game
+  url = git@github.com:robinrob/concentration-game.git
+[submodule "projects/flappy-fish"]
+  path = projects/flappy-fish
+  url = git@github.com:robinrob/flappy-fish.git
+[submodule "projects/flappy-fish-physics"]
+  path = projects/flappy-fish-physics
+  url = git@github.com:robinrob/flappy-fish-physics.git
+[submodule "projects/interpreter"]
+  path = projects/interpreter
+  url = git@github.com:robinrob/interpreter.git
+[submodule "projects/mobile-app"]
+  path = projects/mobile-app
+  url = git@github.com:robinrob/mobile-app.git
+  branch = master
+[submodule "projects/mobile-app-cordova"]
+  path = projects/mobile-app-cordova
+  url = git@github.com:robinrob/mobile-app-cordova.git
+[submodule "projects/mobile-template"]
+  path = projects/mobile-template
+  url = git@github.com:robinrob/mobile-template.git
+[submodule "projects/orbiter-lite"]
+  path = projects/orbiter-lite
+  url = git@github.com:robinrob/orbiter-lite.git
+[submodule "projects/planet-pairs"]
+  path = projects/planet-pairs
+  url = git@github.com:robinrob/planet-pairs.git
+[submodule "projects/Reader"]
+  path = projects/Reader
+  url = git@github.com:robinrob/reader.git
+[submodule "projects/orbiter"]
+  path = projects/orbiter
+  url = git@github.com:robinrob/orbiter.git
+[submodule "projects/angular-hello"]
+	path = projects/angular-hello
+	url = git@github.com:robinrob/angular-hello.git

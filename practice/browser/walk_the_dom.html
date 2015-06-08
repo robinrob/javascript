@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>walk_the_dom</title>
+
+
+</head>
+<body>
+<label>hello</label>
+
+<script type="text/javascript" src="../../lib/browser/log.js"></script>
+
+<script type="text/javascript">
+    function walkDOM(node) {
+        text = ""
+        do {
+            text += "nodeName: " + node.nodeName + ", nodeType: " + node.nodeType + ", node: " + node + "<br>"
+            if (node.hasChildNodes()) {
+                walkDOM(node.firstChild)
+            }
+        } while (node = node.nextSibling)
+
+        write(text)
+    }
+
+    walkDOM(document.body)
+
+
+    function walkDOM2(n) {
+        do {
+            console.log(n);
+            if (n.hasChildNodes()) {
+                walkDOM(n.firstChild)
+            }
+        } while (n = n.nextSibling)
+    }
+
+    walkDOM2(document.documentElement)
+</script>
+</body>
+</html>

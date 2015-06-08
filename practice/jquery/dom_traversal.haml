@@ -1,0 +1,22 @@
+<!doctype html>
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "content-type"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %title Dom Traversal
+    :javascript
+      console.clear()
+    :css
+
+  %body
+    %div
+      %article Wanker
+      %article
+        Wanker
+        %article
+          %pre Grandwanker
+          %article#baby
+            %pre Grand-grandwanker
+  %footer
+    %script{:src => "/Users/msl/programming/robin/javascript/lib/jquery.js", :type => "text/javascript"}
+    %script{:src => "dom_traversal.js", :type => "text/javascript"}

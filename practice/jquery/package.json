@@ -1,0 +1,14 @@
+{
+  "name": "robinrob.github.io-dev",
+  "description": "mrrobinsmith.com dev",
+  "version": "1.0.0",
+  "dependencies": {
+    "gulp": "",
+    "browser-sync": ""
+  },
+  "devDependencies": {
+    "gulp-ruby-haml": "0.0.4",
+    "gulp-watch": "~4.2.4",
+    "gulp-changed": "~1.2.1"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "desktop": {
+    "css": [
+      "app/css/main.css",
+      "app/css/*.css"
+    ],
+    "js": [
+      "app/js/*.js"
+    ],
+    "dest": "dist/desktop"
+  },
+  "mobile": {
+    "css": [
+      "app/mobile/css/*.css"
+    ],
+    "dest": "dist/mobile"
+  }
+}

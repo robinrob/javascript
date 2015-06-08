@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>events_onclick_property</title>
+
+
+</head>
+<body>
+<script type="text/javascript" src="../../lib/browser/log.js"></script>
+
+<div id="my-div">click</div>
+<script type="text/javascript">
+    var myelement = document.getElementById('my-div');
+    myelement.onclick = function() {
+        alert('Ouch!');
+        alert('And double ouch!');
+    }
+</script>
+
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

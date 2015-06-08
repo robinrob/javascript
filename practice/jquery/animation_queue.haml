@@ -1,0 +1,22 @@
+<!doctype html>
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "content-type"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %title Animation Queue
+    :javascript
+      console.clear()
+    :css
+      div {
+        width: 200px;
+        height: 200px;
+        background: blue;
+      }
+  %body
+    %h1#one Click here!
+    %div
+    %h1#two Click here!
+    %h1#three Animate properly
+  %footer
+    %script{:src => "/Users/msl/programming/robin/javascript/lib/jquery.js", :type => "text/javascript"}
+    %script{:src => "animation_queue.js", :type => "text/javascript"}

@@ -1,0 +1,31 @@
+{
+  "name": "gulp-book",
+  "version": "1.0.0",
+  "description": "Example project",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "gulp": "~3.9.0",
+    "gulp-imagemin": "~2.2.1",
+    "run-sequence": "~1.1.0",
+    "connect": "~3.3.5",
+    "serve-static": "~1.9.3",
+    "browser-sync": "~2.7.6",
+    "vinyl-source-stream": "~1.1.0",
+    "browserify": "~10.2.4",
+    "gulp-plumber": "~1.0.1",
+    "beeper": "~1.1.0",
+    "gulp-css-validator": "0.0.4",
+    "gulp-util": "~3.0.5",
+    "shelljs": "~0.5.1",
+    "del": "~1.2.0",
+    "gulp-sourcemaps": "~1.5.2",
+    "gulp-changed": "~1.2.1",
+    "gulp-cached": "~1.1.0",
+    "gulp-ruby-haml": "0.0.4"
+  }
+}

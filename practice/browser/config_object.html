@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>private_methods</title>
+
+
+</head>
+<body>
+<script type="text/javascript" src="../../lib/browser/log.js"></script>
+
+<script type="text/javascript">
+
+    // a constructor that creates buttons
+    var MYAPP = {};
+    MYAPP.dom = {};
+
+    MYAPP.dom.Button = function(text, conf) {
+        var styles = {
+            font: 'Verdana',
+            border: '1px solid black',
+            color: 'black',
+            background: 'grey'
+        };
+        function setStyles() {
+            for (var i in styles) {
+                b.style[i] = conf[i] || styles[i];
+            }
+        }
+        conf = conf || {};
+        var b = document.createElement('input');
+        b.type = conf['type'] || 'submit';
+        b.value = text;
+        setStyles();
+        return b;
+    };
+
+    var config = {
+        font: 'Arial, Verdana, sans-serif',
+        color: 'red'
+    };
+    document.body.appendChild(new MYAPP.dom.Button('puuush', config))
+
+</script>
+</body>
+</html>

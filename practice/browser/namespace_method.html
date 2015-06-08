@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>namespace_method</title>
+
+
+</head>
+<body>
+<script type="text/javascript" src="../../lib/browser/log.js"></script>
+
+<script type="text/javascript">
+
+    try {
+
+        // global namespace
+        var MYAPP = MYAPP || {};
+
+        var MYAPP = {};
+        MYAPP.namespace = function (name) {
+            var parts = name.split('.');
+            var current = MYAPP;
+            for (var i in parts) {
+                if (!current[parts[i]]) {
+                    current[parts[i]] = {};
+                }
+                current = current[parts[i]];
+            }
+        }
+
+        /* Now it is possible to define new sub-objects like this: */
+        MYAPP.namespace('event')
+        MYAPP.event = {hello: "Robin"}
+        MYAPP.namespace('dom.style');
+        MYAPP.dom.style = {color: blue}
+
+        writew("MYAPP.event: ")
+        writeo(MYAPP.event)
+        writew("MYAPP.dom.style: ")
+        writeo(MYAPP.dom.style)
+
+        /* Equivalent to:
+        var MYAPP = {
+            event: {},
+            dom: {
+                style: {}
+            }
+        }*/
+    }
+    catch(e) {
+        alert(e)
+    }
+
+
+</script>
+</body>
+</html>
