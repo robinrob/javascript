@@ -1,0 +1,137 @@
+<!doctype html>
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "content-type"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %title Slider Plugin
+    :javascript
+      console.clear()
+  :css
+    img {
+      width: 300px;
+      height: 300px;
+    }
+
+    body {
+      padding: 50px;
+    }
+
+    .slider {
+      width: 300px;
+      overflow: hidden;
+      height: 400px;
+    }
+
+    .slider ul {
+      list-style: none;
+      width: 3000px;
+      height: 300px;
+      margin: 0;
+      padding: 0;
+    }
+    .slider li {
+      float: left;
+      width: 300px;
+      height: 300px;
+    }
+
+    .button {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      display: block;
+      padding: 6px;
+      border: 1px solid #ccc;
+      margin: 10px 0 0 0;
+    }
+
+    .back {
+      float: left;
+    }
+    .forward {
+      float: right;
+    }
+
+    a:link, a:visited {
+      color: blue;
+      text-decoration: underline;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+
+      body {
+      padding: 50px;
+    }
+
+    .slider {
+      width: 300px;
+      overflow: hidden;
+      height: 400px;
+    }
+
+    .slider ul {
+      list-style: none;
+      width: 3000px;
+      height: 300px;
+      margin: 0;
+      padding: 0;
+    }
+    .slider li {
+      float: left;
+      width: 300px;
+      height: 300px;
+    }
+
+    .button {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      display: block;
+      padding: 6px;
+      border: 1px solid #ccc;
+      margin: 10px 0 0 0;
+    }
+
+    .buttons {
+      width: 300px;
+    }
+
+    .back {
+      float: left;
+    }
+    .forward {
+      float: right;
+    }
+
+    a:link, a:visited {
+      color: blue;
+      text-decoration: underline;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+
+  %body
+    .slider
+      %ul
+        %li
+          %img{:src => "http://placekitten.com/299/300", :alt => "kitten"}
+        %li
+          %img{:src => "http://placekitten.com/299/300", :alt => "kitten"}
+        %li
+          %img{:src => "http://placekitten.com/299/300", :alt => "kitten"}
+        %li
+          %img{:src => "http://placekitten.com/299/300", :alt => "kitten"}
+        %li
+          %img{:src => "http://placekitten.com/299/300", :alt => "kitten"}
+        %li
+          %img{:src => "http://placekitten.com/299/300", :alt => "kitten"}
+
+      .buttons
+        %span.button.back{:href => "#"} Back
+        %span.button.forward{:href => "#"} Forward
+
+  %footer
+    %script{:src => "lib/jquery.js", :type => "text/javascript"}
+    %script{:src => "lib/jquery-ui/jquery-ui.js", :type => "text/javascript"}
+    %script{:src => "slider.jquery.js", :type => "text/javascript"}
+    %script{:src => "slider_plugin.js", :type => "text/javascript"}

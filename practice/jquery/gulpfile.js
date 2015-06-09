@@ -52,8 +52,7 @@ gulp.task('haml-watch', function() {
 // })
 
 gulp.task('watch', function () {
-  gulp.watch('*.haml', function(){runsequence('haml-build')})
-  gulp.watch('*.html').on('change', reload);
+  gulp.watch('*.js', reload)
 });
 
-gulp.task('default', ['browser-sync', 'haml-watch']);
+gulp.task('default', ['browser-sync', 'watch', 'haml-watch']);
