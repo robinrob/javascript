@@ -29,77 +29,38 @@
       margin: 0;
       padding: 0;
     }
+
     .slider li {
       float: left;
       width: 300px;
       height: 300px;
-    }
-
-    .button {
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-      display: block;
-      padding: 6px;
-      border: 1px solid #ccc;
-      margin: 10px 0 0 0;
-    }
-
-    .back {
-      float: left;
-    }
-    .forward {
-      float: right;
-    }
-
-    a:link, a:visited {
-      color: blue;
-      text-decoration: underline;
-    }
-    a:hover {
-      text-decoration: none;
-    }
-
-      body {
-      padding: 50px;
-    }
-
-    .slider {
-      width: 300px;
-      overflow: hidden;
-      height: 400px;
-    }
-
-    .slider ul {
-      list-style: none;
-      width: 3000px;
-      height: 300px;
-      margin: 0;
-      padding: 0;
-    }
-    .slider li {
-      float: left;
-      width: 300px;
-      height: 300px;
-    }
-
-    .button {
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-      display: block;
-      padding: 6px;
-      border: 1px solid #ccc;
-      margin: 10px 0 0 0;
     }
 
     .buttons {
-      width: 300px;
+      text-align: center;
+    }
+
+    .button, .index {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      display: inline-block;
+      padding: 6px;
+      margin: 10px 0 0 0;
+      border: 1px solid #ccc;
+    }
+
+    .index {
+      width: 100px;
     }
 
     .back {
       float: left;
+      text-align: left;
     }
+
     .forward {
       float: right;
+      text-align: right;
     }
 
     a:link, a:visited {
@@ -128,6 +89,7 @@
 
       .buttons
         %span.button.back{:href => "#"} Back
+        %span.index
         %span.button.forward{:href => "#"} Forward
 
   %footer
