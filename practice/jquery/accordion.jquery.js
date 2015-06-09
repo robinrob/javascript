@@ -2,7 +2,9 @@
   $.fn.accordion = function(options) {
     var defaults = {
       heading: "h2",
-      paragraph: "p"
+      paragraph: "p",
+      duration: 600,
+      callback: function() {}
     }
     var params = $.extend({}, defaults, options)
 
@@ -10,10 +12,10 @@
       var headings = $(this).children(params.heading)
       var paragraphs = $(this).children(params.paragraph)
 
-      var animateAccordion = function(elem) {
+      var animateAccordion = function(elem, duration, callback) {
         var easing = "easeInSine"
-        paragraphs.stop(true, true).slideUp("normal", easing)
-        $(elem).stop(true, true).slideDown("normal", easing)
+        paragraphs.stop(true, true).slideUp(duration, easing, callback)
+        $(elem).stop(true, true).slideDown(duration, easing, callback)
       }
 
       paragraphs.not(":first").hide()
@@ -30,7 +32,7 @@
 
       $(this).on("showParagraph", "p", function() {
         console.log("p CLICKED")
-        animateAccordion(this)
+        animateAccordion(this, params.duration, params.callback)
       })
     })
   }

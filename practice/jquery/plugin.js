@@ -11,6 +11,8 @@ $(function() {
 
   $(".accordion").accordion({
     heading: "h2",
-    paragraph: "p"
+    paragraph: "p",
+    callback: function() { console.log("Accordioned!")},
+    duration: 1000
   })
 })
