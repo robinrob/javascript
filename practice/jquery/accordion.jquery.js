@@ -19,8 +19,7 @@
       }
 
       paragraphs.not(":first").hide()
-      $(this).on("click", "h2", function() {
-        console.log("H2 CLICKED")
+      $(this).on("click", params.heading, function() {
         var para = $(this).next()
         // It's .next() because 'this' is referring to a header,
         // and the related paragraph comes next in the DOM of
@@ -30,11 +29,9 @@
         }
       })
 
-      $(this).on("showParagraph", "p", function() {
-        console.log("p CLICKED")
+      $(this).on("showParagraph", params.paragraph, function() {
         animateAccordion(this, params.duration, params.callback)
       })
     })
   }
-  // $.fn.accordion({})
 })(jQuery)
