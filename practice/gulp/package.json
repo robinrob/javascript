@@ -26,6 +26,7 @@
     "gulp-sourcemaps": "~1.5.2",
     "gulp-changed": "~1.2.1",
     "gulp-cached": "~1.1.0",
-    "gulp-ruby-haml": "0.0.4"
+    "gulp-ruby-haml": "0.0.4",
+    "yargs": "~3.10.0"
   }
 }

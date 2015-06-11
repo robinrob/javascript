@@ -9,7 +9,7 @@ var runsequence = require('run-sequence')
 var connect = require('connect')
 var serve = require('serve-static')
 var browsersync = require('browser-sync')
-var reload      = browserSync.reload
+var reload      = browsersync.reload
 var browserify = require('browserify')
 var source = require('vinyl-source-stream')
 var plumber = require('gulp-plumber')
@@ -20,9 +20,10 @@ require('shelljs/global')
 var validator = require('gulp-css-validator')
 var del = require('del')
 var sourcemaps = require('gulp-sourcemaps')
-var haml = require('gulp-ruby-haml');
-var changed = require('gulp-changed');
-var cache = require('gulp-cached');
+var haml = require('gulp-ruby-haml')
+var changed = require('gulp-changed')
+var cache = require('gulp-cached')
+var argv = require('yargs').argv
 
 var config = require('./config.json')
 
@@ -36,7 +37,7 @@ function onError(err) {
 // If you need to process a particular file before the others,
 // you can pass an array of globs into a src() function like
 // below. Gulp is smart enough to not process the same file twice.
-// var cssFiles = ['app/css/main.css', 'app/css/*.css'];
+// var cssFiles = ['app/css/main.css', 'app/css/*.css']
 
 function processCSS(cfg) {
   return gulp.src(cfg.css)
@@ -132,8 +133,8 @@ gulp.task('server', function() {
   return connect().use(serve(__dirname))
   .listen(8080)
   .on('listening', function() {
-    console.log('Server Running: View at http://localhost:8080');
-  });
+    console.log('Server Running: View at http://localhost:8080')
+  })
 })
 
 gulp.task('browser-sync', function(cb) {
@@ -141,8 +142,8 @@ gulp.task('browser-sync', function(cb) {
     server: {
       baseDir:'./'
     }
-  }, cb);
-});
+  }, cb)
+})
 
 // // First, we pass our main JavaScript application that requires our modules
 // to browserify().
@@ -167,4 +168,9 @@ gulp.task('browserify', function() {
 // Clean all files under dist/ except site.css
 gulp.task('clean', function() {
   del(['dist/*', '!dist/site.css'])
+})
+
+gulp.task('args', function() {
+  // Use like: gulp args --arg value
+  console.log("arg: " + argv.arg)
 })
