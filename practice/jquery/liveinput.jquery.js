@@ -1,8 +1,7 @@
 (function($) {
     $.fn.liveInput = function(options) {
         var defaults = {
-            text: "<Text>",
-            input: ".input"
+            text: "<Text>"
         }
         var params = $.extend({}, defaults, options)
 
@@ -19,7 +18,6 @@
         function keyPress() {
             var audio = document.createElement("audio");
             audio.src = keySound()
-            console.log("src: " + audio.src)
             audio.addEventListener("ended", function () {
                 $(this).remove()
             }, false);
@@ -37,7 +35,6 @@
         }
 
         function writeChar(char, cursorElement) {
-            console.log("char: " + char)
             var $char = $("<span />", {
                 html: char,
                 class: "char"
@@ -64,13 +61,13 @@
         }
 
         return this.each(function () {
-            var $input = $(params.input)
+            var $this = $(this)
 
             var $cursor = $("<span />", {
                 text: "_",
                 class: "cursor"
             });
-            $input.append($cursor)
+            $this.append($cursor)
 
             setTimeout(function() {
                 writeText(params.text, $cursor)
@@ -79,46 +76,42 @@
             toggleCursor($cursor);
 
             var focussed = false
-            $(".input").on("focusin", function () {
+            $this.on("focusin", function () {
+                console.log("focussed")
                 focussed = true
             })
 
-            $(".input").on("focusout", function () {
+            $this.on("focusout", function () {
+                console.log("unfocussed")
                 focussed = false
             })
 
-            $(document.documentElement).on("keydown", function (event) {
-                if (focussed && !event.hasRun) {
-                    console.log("keydown")
-                    if (event.keyCode === 8) { //backspace
-                        console.log("backspace")
-                        event.type = "keyInput"
-                        $(this).trigger(event)
-                        event.preventDefault()
-                    }
+            $(document.documentElement).on("keydown", function(event) {
+                if (focussed && event.keyCode === 8) { // backspace
+                    event.type = "keyInput"
+                    $(this).trigger(event)
+                    event.preventDefault()
                 }
             })
 
-            $(document.documentElement).on("keypress", function (event) {
-                if (focussed && !event.hasRun) {
+            $(document.documentElement).on("keypress", function(event) {
+                if (focussed) {
                     event.type = "keyInput"
                     $(this).trigger(event)
                     event.preventDefault()
                 }
             });
 
-            $(document.documentElement).on("keyup", function (event) {
-                if (isPossibleKeyCode(event.keyCode)) {
+            $(document.documentElement).on("keyup", function(event) {
+                if (focussed && event.keyCode == 8) {
                     keyPress()
                 }
-            });
+            })
 
-            $(document.documentElement).on("keyInput", function (event) {
-                console.log("keyInput")
+            $(document.documentElement).on("keyInput", function(event) {
                 var char = String.fromCharCode(event.keyCode)
 
                 if (event.keyCode === 8) { //backspace
-                    console.log("backspace")
                     $(".cursor").siblings().last().remove()
                 }
                 else if (isValidChar(char)) {
@@ -126,6 +119,7 @@
                         char = '&nbsp'
                     }
                     writeChar(char, $cursor)
+                    keyPress()
                 }
             });
         })
