@@ -5,7 +5,8 @@ $(function () {
         text: "_",
         class: "cursor"
     });
-    $cursor.insertAfter($input)
+    $input.append($cursor)
+    //$cursor.insertAfter($input)
 
 
     function writeHeading() {
@@ -16,8 +17,8 @@ $(function () {
                 class: "char"
             });
             setTimeout(function() {
-                $input.val($input.val() + char)
-                //$($char).insertBefore($cursor)
+                //$input.val($input.val() + char)
+                $($char).insertBefore($cursor)
             }, index * 200 + Math.random() * 200)
         })
     }
@@ -54,22 +55,63 @@ $(function () {
 
     toggleCursor();
 
-    $(document.documentElement).on("keyup", function(event) {
-        console.log("keyup")
+    //$($input).on("focus", function() {
+    //    console.log("focussed input")
+    //})
+    //
+    //$(".char").focus(function() {
+    //    console.log("focussed char")
+    //})
 
-        if(event.keyCode === 37) { //backspace
+    var focussed = false
+    $(".input").focusin(function() {
+        focussed = true
+    })
+
+    $(".input").focusout(function() {
+        focussed = false
+    })
+
+    $(document.documentElement).on("keydown", function(event) {
+        if (focussed && !event.hasRun) {
+            console.log("keydown")
+            if(event.keyCode === 8) { //backspace
+                console.log("backspace")
+                event.type = "keyInput"
+                $(this).trigger(event)
+                event.preventDefault()
+            }
+        }
+    })
+
+    $(document.documentElement).on("keypress", function(event) {
+        if (focussed && !event.hasRun) {
+            event.type = "keyInput"
+            $(this).trigger(event)
+            event.preventDefault()
+        }
+    });
+
+    $(document.documentElement).on("keyInput", function(event) {
+        console.log("keyInput")
+
+        var regx = /[-,.;:@& a-zA-Z0-9]/;
+        var char = String.fromCharCode(event.keyCode)
+
+        if(event.keyCode === 8) { //backspace
             console.log("backspace")
             $(".cursor").siblings().last().remove()
         }
-        else {
-            //$($input).append("A")
-            //console.log("input: " + String.fromCharCode(event.keyCode))
-            //var $char = $("<span />", {
-            //    text: String.fromCharCode(event.keyCode),
-            //    class: "char"
-            //});
-            //$(".cursor").insertBefore($char)
+        else if (regx.test(char)) {
+            if (char == ' ') {
+                char = '&nbsp'
+            }
+            console.log("char: " + char)
+            var $char = $("<span />", {
+                html: char,
+                class: "char"
+            });
+            $($char).insertBefore($cursor)
         }
-        event.preventDefault()
     });
 })
