@@ -1,7 +1,9 @@
-(function($) {
-    $.fn.liveInput = function(options) {
+(function ($) {
+    $.fn.liveInput = function (options) {
         var defaults = {
-            text: "<Text>"
+            text: "<Text>",
+            tabindex: -1,
+            audioDir: "sounds"
         }
         var params = $.extend({}, defaults, options)
 
@@ -12,7 +14,7 @@
         ]
 
         function keySound() {
-            return keySounds[Math.round(Math.random() * (keySounds.length - 1))]
+            return params.audioDir + "/" + keySounds[Math.round(Math.random() * (keySounds.length - 1))]
         }
 
         function keyPress() {
@@ -24,22 +26,27 @@
             audio.play();
         }
 
-        function writeText(text, cursorElement) {
-            var chars = text.split("")
-            chars.forEach(function (char, index) {
-                setTimeout(function () {
-                    writeChar(char, cursorElement)
-                    keyPress()
-                }, index * 200 + Math.random() * 200)
-            })
-        }
-
         function writeChar(char, cursorElement) {
             var $char = $("<span />", {
                 html: char,
                 class: "char"
             });
             $($char).insertBefore(cursorElement)
+            keyPress()
+        }
+
+        function writeText(text, cursorElement, callback) {
+            var char = text.substr(0, 1)
+            text = text.slice(1)
+            writeChar(char, cursorElement)
+            if (text.length == 0) {
+                callback()
+            }
+            else if (text.length > 0) {
+                setTimeout(function() {
+                    writeText(text, cursorElement, callback)
+                }, 200 + Math.random() * 200)
+            }
         }
 
         function isValidChar(char) {
@@ -51,17 +58,10 @@
             return event.keyCode === 8 || isValidChar(String.fromCharCode(keyCode))
         }
 
-        function toggleCursor(cursorElement) {
-            cursorElement.fadeToggle({
-                duration: 100,
-                complete: setTimeout(function () {
-                    toggleCursor(cursorElement);
-                }, 500)
-            })
-        }
-
         return this.each(function () {
             var $this = $(this)
+
+            $this.attr("tabindex", params.tabindex)
 
             var $cursor = $("<span />", {
                 text: "_",
@@ -69,46 +69,67 @@
             });
             $this.append($cursor)
 
-            setTimeout(function() {
-                writeText(params.text, $cursor)
-            }, 500)
-
-            toggleCursor($cursor);
-
-            var focussed = false
-            $this.on("focusin", function () {
-                console.log("focussed")
-                focussed = true
+            setTimeout(function () {
+                writeText(params.text, $cursor, function() {
+                    toggleCursor($cursor);
+                })
             })
 
-            $this.on("focusout", function () {
-                console.log("unfocussed")
-                focussed = false
-            })
+            function toggleCursor(cursorElement) {
+                var opacity = cursorElement.css("opacity")
+                if ((opacity == 0) && $this.is(":focus")) {
+                    fadeInCursor(cursorElement)
+                }
+                else {
+                    fadeOutCursor(cursorElement)
+                }
+            }
 
-            $(document.documentElement).on("keydown", function(event) {
-                if (focussed && event.keyCode === 8) { // backspace
+            function fadeInCursor(cursorElement) {
+                fadeCursor(cursorElement, 1)
+            }
+
+            function fadeOutCursor(cursorElement) {
+                fadeCursor(cursorElement, 0)
+            }
+
+            function fadeCursor(cursorElement, opacity) {
+                cursorElement.animate({
+                        opacity: opacity
+                    },
+                    {
+                        duration: 100,
+                        complete: function () {
+                            setTimeout(function () {
+                                toggleCursor(cursorElement)
+                            }, 500)
+                        }
+                    })
+            }
+
+            $(document.documentElement).on("keydown", function (event) {
+                if ($this.is(":focus") && event.keyCode === 8) { // backspace
                     event.type = "keyInput"
                     $(this).trigger(event)
                     event.preventDefault()
                 }
             })
 
-            $(document.documentElement).on("keypress", function(event) {
-                if (focussed) {
+            $(document.documentElement).on("keypress", function (event) {
+                if ($this.is(":focus")) {
                     event.type = "keyInput"
                     $(this).trigger(event)
                     event.preventDefault()
                 }
             });
 
-            $(document.documentElement).on("keyup", function(event) {
-                if (focussed && event.keyCode == 8) {
+            $(document.documentElement).on("keyup", function (event) {
+                if ($this.is(":focus") && event.keyCode == 8) {
                     keyPress()
                 }
             })
 
-            $(document.documentElement).on("keyInput", function(event) {
+            $(document.documentElement).on("keyInput", function (event) {
                 var char = String.fromCharCode(event.keyCode)
 
                 if (event.keyCode === 8) { //backspace
