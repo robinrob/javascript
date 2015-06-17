@@ -32,7 +32,7 @@ gulp.task('browser-sync', function() {
       baseDir: '.',
       index: open
     },
-    browser: "safari",
+    browser: "google chrome",
   });
 });
 

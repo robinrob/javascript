@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='content-type'>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+    <title>Live Input</title>
+    <script>
+      console.clear()
+    </script>
+    <style>
+      body {
+        background-color: black;
+      }
+      
+      .cursor {
+        margin-left: 0.1em;
+      }
+      
+      .input > .cursor {
+        color: green;
+      }
+      
+      .input > .char {
+        color: white;
+      }
+      
+      textarea {
+        color: white;
+      }
+      
+      .input {
+        color: white;
+        font-size: 50px;
+        line-height: 50px;
+      }
+      
+      h1:active {
+        border: 1px solid white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class='input' type='text'></h1>
+  </body>
+  <footer>
+    <script src='lib/jquery.js' type='text/javascript'></script>
+    <script src='lib/jquery-ui/jquery-ui.js' type='text/javascript'></script>
+    <script src='live_input.js' type='text/javascript'></script>
+  </footer>
+</html>
