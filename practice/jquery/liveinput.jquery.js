@@ -140,7 +140,6 @@
                         char = '&nbsp'
                     }
                     writeChar(char, $cursor)
-                    keyPress()
                 }
             });
         })
