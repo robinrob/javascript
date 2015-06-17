@@ -55,20 +55,12 @@ $(function () {
 
     toggleCursor();
 
-    //$($input).on("focus", function() {
-    //    console.log("focussed input")
-    //})
-    //
-    //$(".char").focus(function() {
-    //    console.log("focussed char")
-    //})
-
     var focussed = false
-    $(".input").focusin(function() {
+    $(".input").on("focusin", function() {
         focussed = true
     })
 
-    $(".input").focusout(function() {
+    $(".input").on("focusout", function() {
         focussed = false
     })
 
