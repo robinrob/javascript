@@ -5,7 +5,7 @@ $(function () {
         text: "_",
         class: "cursor"
     });
-    $($input).append($cursor)
+    $cursor.insertAfter($input)
 
 
     function writeHeading() {
@@ -16,7 +16,8 @@ $(function () {
                 class: "char"
             });
             setTimeout(function() {
-                $($char).insertBefore($cursor)
+                $input.val($input.val() + char)
+                //$($char).insertBefore($cursor)
             }, index * 200 + Math.random() * 200)
         })
     }
@@ -42,16 +43,16 @@ $(function () {
     //    }, speed * chars[char])
     //}
 
-    function toggleBox() {
+    function toggleCursor() {
         $cursor.fadeToggle({
             duration: 100,
             complete: setTimeout(function () {
-                toggleBox();
+                toggleCursor();
             }, 500)
         })
     }
 
-    //toggleBox();
+    toggleCursor();
 
     $(document.documentElement).on("keyup", function(event) {
         console.log("keyup")
@@ -61,12 +62,13 @@ $(function () {
             $(".cursor").siblings().last().remove()
         }
         else {
-            console.log("input: " + String.fromCharCode(event.keyCode))
-            var $char = $("<span />", {
-                text: String.fromCharCode(event.keyCode),
-                class: "char"
-            });
-            $(".cursor").insertBefore($char)
+            //$($input).append("A")
+            //console.log("input: " + String.fromCharCode(event.keyCode))
+            //var $char = $("<span />", {
+            //    text: String.fromCharCode(event.keyCode),
+            //    class: "char"
+            //});
+            //$(".cursor").insertBefore($char)
         }
         event.preventDefault()
     });

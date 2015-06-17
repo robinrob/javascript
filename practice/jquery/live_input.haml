@@ -12,18 +12,11 @@
       }
 
       .cursor {
+        color: green;
         margin-left: 0.1em;
       }
 
-      .input > .cursor {
-        color: green;
-      }
-
-      .input > .char {
-        color: white;
-      }
-
-      textarea {
+      .char {
         color: white;
       }
 
@@ -31,15 +24,18 @@
         color: white;
         font-size: 50px;
         line-height: 50px;
+        background-color: black;
+        border: none;
       }
 
-      h1:active {
+      input:focus {
         border: 1px solid white;
       }
 
 
   %body
-    %h1.input{:type => "text"}
+    %h1
+      %input.input{:type => "text", :readonly => "readonly"}
 
   %footer
     %script{:src => "lib/jquery.js", :type => "text/javascript"}
