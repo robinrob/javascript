@@ -7,9 +7,9 @@ var config = {
             src: ['**/*.html'],
         },
         js: {
-            main: 'scripts.js',
-            src: ['./_js/*.js'],
-            dest: './js/'
+            //main: 'scripts.js',
+            src: ['./js/*.js'],
+            //dest: './js/'
         }
     },
     siteUrl: "https://rsmith.io",
@@ -138,11 +138,11 @@ gulp.task('fast-build', function (done) {
 })
 
 gulp.task('dev-build', function (done) {
-    runSequence('haml-build', 'js-dev', 'reload', done)
+    runSequence('haml-build', 'reload', done)
 })
 
 gulp.task('fast-dev-build', function (done) {
-    runSequence('js-dev', 'reload', done)
+    runSequence('reload', done)
 })
 
 gulp.task('watch', ['haml-watch'], function () {
