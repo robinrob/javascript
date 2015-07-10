@@ -66,8 +66,7 @@ gulp.task('reload', function () {
 gulp.task('browser-sync', function () {
     browserSync({
         server: {
-            baseDir: './',
-            index: 'index.html'
+            baseDir: './'
         },
         browser: 'safari'
     })
