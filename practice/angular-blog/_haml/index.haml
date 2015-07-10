@@ -2,14 +2,20 @@
 %html{:lang => "en", "ng-app" => "helloWorldApp"}
   %head
     %title AngularJS Hello World
+
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %script{:src => "js/libs/angular.min.js"}
-    %script{:src => "js/libs/angular-route.min.js"}
-    %script{:src => "js/libs/angular-resource.min.js"}
-    %script{:src => "js/libs/angular-cookies.min.js"}
-    %script{:src => "js/app.js"}
-    %script{:src => "js/controllers.js"}
-    %script{:src => "js/services.js"}
+
+    :javascript
+      console.clear()
   %body
     %div{"ng-view" => ""}
+    Index
+
+    %script{:src => "js/libs/angular.js"}
+    -#%script{:src => "js/libs/angular-route.js"}
+    -#%script{:src => "js/libs/angular-resource.js"}
+    -#%script{:src => "js/libs/angular-cookies.js"}
+    -#%script{:src => "js/app.js"}
+    -#%script{:src => "js/controllers.js"}
+    -#%script{:src => "js/services.js"}
