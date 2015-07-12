@@ -20,10 +20,9 @@ helloWorldControllers.controller('CustomerCtrl', ['$scope', function CustomerCtr
     }
 }])
 
-helloWorldControllers.controller('NewCustomerCtrl', ['$scope', function AddCustomerCtrl($scope, $location) {
+helloWorldControllers.controller('NewCustomerCtrl', ['$scope', '$location', function NewCustomerCtrl($scope, $location) {
     $scope.submit = function() {
-        console.log("Submit!")
-        $location.path('/addedCustomer/' + $scope.cName + '/' + $scope.cCity)
+        $location.path('/addedCustomer/' + $scope.name + '/' + $scope.city)
     }
 }])
 

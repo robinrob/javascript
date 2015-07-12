@@ -6,7 +6,7 @@
   <strong>Customer Number:</strong>
   {{ customerNumber }}
 </div>
-<form ng-controller='CustomerCtrl' ng-submit='changeCustomer()'>
+<form>
   <div>
     Customer Name:
     <input ng-model='cName' type='text'>
@@ -15,5 +15,7 @@
     Customer Number:
     <input ng-model='cNumber' type='text'>
   </div>
-  <button type='submit'>Add New Customer</button>
+  <div>
+    <input ng-click='changeCustomer()' type='submit'>
+  </div>
 </form>

@@ -23,9 +23,9 @@ helloWorldApp.config(['$routeProvider', '$locationProvider', function($routeProv
             templateUrl: 'partials/newCustomer.html',
             controller: 'NewCustomerCtrl'
         })
-        .when('/addedCustomer', {
+        .when('/addedCustomer/:customer/:city', {
             templateUrl: 'partials/addedCustomer.html',
-            controller: 'AddedCustomerCtrl/:customer:/:city'
+            controller: 'AddedCustomerCtrl'
         })
     //$locationProvider.html5Mode(true)
     $locationProvider.html5Mode(false).hashPrefix("!")
