@@ -16,7 +16,7 @@ describe("Blog Application Test", function(){
         expect(browser.getTitle()).toEqual("Blog App");
 
         //gets the comment list
-        var commentList = element.all(by.repeater('comment in comments'))
+        var commentList = element.all(by.repeater('comment in blogEntry.comments'))
 
         //checks the size of the commentList
         expect(commentList.count()).toEqual(2)

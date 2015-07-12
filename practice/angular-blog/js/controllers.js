@@ -59,6 +59,4 @@ blogControllers.controller('BlogViewCtrl',
             }else if(blogId === '2'){
                 $scope.blogEntry = blog2;
             }
-
-            $scope.comments = $scope.blogEntry.comments
 }]);

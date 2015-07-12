@@ -8,5 +8,5 @@
       {{blogEntry.blogText}}
     .blog-comment-wrapper
       .blog-comment-label Blog Comments
-      .blog-entry-comments{"ng-repeat" => "comment in comments"}
+      .blog-entry-comments{"ng-repeat" => "comment in blogEntry.comments"}
         {{comment.commentText}}
