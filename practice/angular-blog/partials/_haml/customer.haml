@@ -1,0 +1,16 @@
+%div
+  %strong Customer Name:
+  {{ customerName }}
+%div
+  %strong Customer Number:
+  {{ customerNumber }}
+
+%form{'ng-submit' => 'changeCustomer()', 'ng-controller' => 'CustomerCtrl'}
+  %div
+    Customer Name:
+    %input{:type => 'text', 'ng-model' => 'cName'}
+  %div
+    Customer Number:
+    %input{:type => 'text', 'ng-model' => 'cNumber'}
+
+  %button{:type => 'submit'} Add New Customer

@@ -1,0 +1,11 @@
+<form ng-controller='NewCustomerCtrl as newCust' ng-submit='newCust.submit()'>
+  <div>
+    Customer Name:
+    <input ng-model='newCust.cName' required='' type='text'>
+  </div>
+  <div>
+    Customer City:
+    <input ng-model='newCust.cCity' required='' type='text'>
+  </div>
+  <button id='f1' type='submit'>Add New Customer</button>
+</form>

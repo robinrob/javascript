@@ -1,0 +1,10 @@
+%form{'ng-submit' => 'newCust.submit()', 'ng-controller' => 'NewCustomerCtrl as newCust'}
+  %div
+    Customer Name:
+    %input{:type => 'text', 'ng-model' => 'newCust.cName', :required => ''}
+  %div
+    Customer City:
+    %input{:type => 'text', 'ng-model' => 'newCust.cCity', :required => ''}
+
+  %button{:id => 'f1', :type => 'submit'} Add New Customer
+

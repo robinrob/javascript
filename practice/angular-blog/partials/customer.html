@@ -1,0 +1,19 @@
+<div>
+  <strong>Customer Name:</strong>
+  {{ customerName }}
+</div>
+<div>
+  <strong>Customer Number:</strong>
+  {{ customerNumber }}
+</div>
+<form ng-controller='CustomerCtrl' ng-submit='changeCustomer()'>
+  <div>
+    Customer Name:
+    <input ng-model='cName' type='text'>
+  </div>
+  <div>
+    Customer Number:
+    <input ng-model='cNumber' type='text'>
+  </div>
+  <button type='submit'>Add New Customer</button>
+</form>
