@@ -12,6 +12,10 @@ blogApp.config(['$routeProvider', '$locationProvider',
                 templateUrl: 'partials/main.html',
                 controller: 'BlogCtrl'
             })
+            .when('/blogPost/:id', {
+                templateUrl: 'partials/blogPost.html',
+                controller: 'BlogViewCtrl'
+            })
 
         $locationProvider.html5Mode(false).hashPrefix('!');
 }])
