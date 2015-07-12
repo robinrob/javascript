@@ -1,12 +1,11 @@
-
 module.exports = function (config) {
     config.set({
         basePath: '../',
         files: [
-            "public_html/js/libs/angular.min.js",
-            "public_html/js/libs/angular-mocks.js",
-            "public_html/js/libs/angular-route.min.js",
-            "public_html/js/*.js",
+            "js/libs/angular.min.js",
+            "js/libs/angular-mocks.js",
+            "js/libs/angular-route.min.js",
+            "js/*.js",
             "test/**/*Spec.js"
         ],
         exclude: [

@@ -44,8 +44,8 @@ describe('Hello World', function() {
       ctrl = $controller('CustomerCtrl', {$scope: scope});
     }));
     
-    it('should create initialed message', function() { 
-      expect(scope.customerName).toEqual("Bob's Burgers");      
+    it('should create initialed customerName', function() {
+      expect(scope.customerName).toEqual("Robin Smith Software");
     });
 
   });
