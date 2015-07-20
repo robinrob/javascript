@@ -7,7 +7,7 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.navbar-brand{:href => "#!/", :style => "{{brandColor}}"} Angular Blog
+      %a.navbar-brand{:href => "#!/", :style => "{{brandColor}}"} {{ label }}
     / Collect the nav links, forms, and other content for toggling
     .collapse.navbar-collapse
       %ul.nav.navbar-nav
@@ -15,4 +15,6 @@
           %a{:href => "#!about"} About
         %li
           %a{:href => "https://github.com/KenWilliamson"} Download Project Code
+        %li
+          %a{:href => "#!logout"} Logout
     / /.navbar-collapse

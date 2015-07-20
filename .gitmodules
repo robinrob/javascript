@@ -1,3 +1,6 @@
+[submodule "projects/angular-hello"]
+  path = projects/angular-hello
+  url = git@github.com:robinrob/angular-hello.git
 [submodule "projects/boiler-plate"]
   path = projects/boiler-plate
   url = git@github.com:robinrob/boiler-plate.git
@@ -29,6 +32,9 @@
 [submodule "projects/mobile-template"]
   path = projects/mobile-template
   url = git@github.com:robinrob/mobile-template.git
+[submodule "projects/orbiter"]
+  path = projects/orbiter
+  url = git@github.com:robinrob/orbiter.git
 [submodule "projects/orbiter-lite"]
   path = projects/orbiter-lite
   url = git@github.com:robinrob/orbiter-lite.git
@@ -38,9 +44,6 @@
 [submodule "projects/Reader"]
   path = projects/Reader
   url = git@github.com:robinrob/reader.git
-[submodule "projects/orbiter"]
-  path = projects/orbiter
-  url = git@github.com:robinrob/orbiter.git
-[submodule "projects/angular-hello"]
-	path = projects/angular-hello
-	url = git@github.com:robinrob/angular-hello.git
+[submodule "projects/consolewriter.jquery.js"]
+	path = projects/consolewriter.jquery.js
+	url = git@github.com:robinrob/consolewriter.jquery.js.git

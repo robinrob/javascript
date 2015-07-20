@@ -27,6 +27,7 @@ var config = {
 }
 config.paths.watch = [
     config.paths.html.src,
+    config.paths.sass.src,
     config.paths.js.src
 ]
 

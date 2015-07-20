@@ -7,6 +7,7 @@
     "karma-jasmine": "*",
     "karma-junit-reporter": "*",
     "karma-coverage": "*",
+    "karma-ng-html2js-preprocessor": "~0.1",
     "webdriver-manager": "~6.0.2",
     "protractor": "~2.1.0"
   }
