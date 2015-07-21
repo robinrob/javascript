@@ -47,3 +47,9 @@
 [submodule "projects/consolewriter.jquery.js"]
 	path = projects/consolewriter.jquery.js
 	url = git@github.com:robinrob/consolewriter.jquery.js.git
+[submodule "projects/robinrob.github.io"]
+	path = projects/robinrob.github.io
+	url = git@github.com:robinrob/robinrob.github.io.git
+[submodule "projects/robinrob.github.io-dev"]
+	path = projects/robinrob.github.io-dev
+	url = git@github.com:robinrob/robinrob.github.io-dev.git
