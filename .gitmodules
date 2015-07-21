@@ -53,3 +53,6 @@
 [submodule "projects/robinrob.github.io-dev"]
 	path = projects/robinrob.github.io-dev
 	url = git@github.com:robinrob/robinrob.github.io-dev.git
+[submodule "projects/jekyll-gulp-haml-sass-browsersync"]
+	path = projects/jekyll-gulp-haml-sass-browsersync
+	url = git@github.com:robinrob/jekyll-gulp-haml-sass-browsersync.git
