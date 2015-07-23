@@ -13,6 +13,9 @@
 [submodule "projects/concentration-game"]
   path = projects/concentration-game
   url = git@github.com:robinrob/concentration-game.git
+[submodule "projects/consolewriter.jquery.js"]
+  path = projects/consolewriter.jquery.js
+  url = git@github.com:robinrob/consolewriter.jquery.js.git
 [submodule "projects/flappy-fish"]
   path = projects/flappy-fish
   url = git@github.com:robinrob/flappy-fish.git
@@ -22,6 +25,9 @@
 [submodule "projects/interpreter"]
   path = projects/interpreter
   url = git@github.com:robinrob/interpreter.git
+[submodule "projects/jekyll-gulp-haml-sass-browsersync"]
+  path = projects/jekyll-gulp-haml-sass-browsersync
+  url = git@github.com:robinrob/jekyll-gulp-haml-sass-browsersync.git
 [submodule "projects/mobile-app"]
   path = projects/mobile-app
   url = git@github.com:robinrob/mobile-app.git
@@ -44,15 +50,12 @@
 [submodule "projects/Reader"]
   path = projects/Reader
   url = git@github.com:robinrob/reader.git
-[submodule "projects/consolewriter.jquery.js"]
-	path = projects/consolewriter.jquery.js
-	url = git@github.com:robinrob/consolewriter.jquery.js.git
+[submodule "projects/recipes-app"]
+  path = projects/recipes-app
+  url = git@github.com:robinrob/recipes-app.git
 [submodule "projects/robinrob.github.io"]
-	path = projects/robinrob.github.io
-	url = git@github.com:robinrob/robinrob.github.io.git
+  path = projects/robinrob.github.io
+  url = git@github.com:robinrob/robinrob.github.io.git
 [submodule "projects/robinrob.github.io-dev"]
-	path = projects/robinrob.github.io-dev
-	url = git@github.com:robinrob/robinrob.github.io-dev.git
-[submodule "projects/jekyll-gulp-haml-sass-browsersync"]
-	path = projects/jekyll-gulp-haml-sass-browsersync
-	url = git@github.com:robinrob/jekyll-gulp-haml-sass-browsersync.git
+  path = projects/robinrob.github.io-dev
+  url = git@github.com:robinrob/robinrob.github.io-dev.git
