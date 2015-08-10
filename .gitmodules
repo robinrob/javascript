@@ -59,3 +59,6 @@
 [submodule "projects/robinrob.github.io-dev"]
   path = projects/robinrob.github.io-dev
   url = git@github.com:robinrob/robinrob.github.io-dev.git
+[submodule "projects/gulpfile"]
+	path = projects/gulpfile
+	url = git@github.com:robinrob/gulpfile.git
