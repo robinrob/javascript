@@ -62,3 +62,9 @@
 [submodule "projects/gulpfile"]
 	path = projects/gulpfile
 	url = git@github.com:robinrob/gulpfile.git
+[submodule "projects/fundamental-origins-dev"]
+	path = projects/fundamental-origins-dev
+	url = git@github.com:robinrob/fundamental-origins-dev.git
+[submodule "projects/angular-test"]
+	path = projects/angular-test
+	url = git@github.com:robinrob/angular-test.git

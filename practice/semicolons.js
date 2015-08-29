@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-/* This will give a fucking error because the 'require' statement is immediately followed by a '(' character, which is
- not a syntax error and therefore the interpreter will not automatically insert a fucking semicolon.
+/* This will give an error because the 'require' statement is immediately followed by a '(' character, which is
+ not a syntax error and therefore the interpreter will not automatically insert a semicolon.
  http://inimino.org/~inimino/blog/javascript_semicolons
  */
 
@@ -12,7 +12,7 @@ require(process.env.JS_LIB_HOME + '/log');
     log("Hello World!")
 })()
 
-/* The fucking wrong way: */
+/* The wrong way: */
 require(process.env.JS_LIB_HOME + '/log')
 
 (function () {
