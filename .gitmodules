@@ -1,6 +1,9 @@
 [submodule "projects/angular-hello"]
   path = projects/angular-hello
   url = git@github.com:robinrob/angular-hello.git
+[submodule "projects/angular-test"]
+  path = projects/angular-test
+  url = git@github.com:robinrob/angular-test.git
 [submodule "projects/boiler-plate"]
   path = projects/boiler-plate
   url = git@github.com:robinrob/boiler-plate.git
@@ -22,6 +25,12 @@
 [submodule "projects/flappy-fish-physics"]
   path = projects/flappy-fish-physics
   url = git@github.com:robinrob/flappy-fish-physics.git
+[submodule "projects/fundamental-origins-dev"]
+  path = projects/fundamental-origins-dev
+  url = git@github.com:robinrob/fundamental-origins-dev.git
+[submodule "projects/gulpfile"]
+  path = projects/gulpfile
+  url = git@github.com:robinrob/gulpfile.git
 [submodule "projects/interpreter"]
   path = projects/interpreter
   url = git@github.com:robinrob/interpreter.git
@@ -59,12 +68,3 @@
 [submodule "projects/robinrob.github.io-dev"]
   path = projects/robinrob.github.io-dev
   url = git@github.com:robinrob/robinrob.github.io-dev.git
-[submodule "projects/gulpfile"]
-	path = projects/gulpfile
-	url = git@github.com:robinrob/gulpfile.git
-[submodule "projects/fundamental-origins-dev"]
-	path = projects/fundamental-origins-dev
-	url = git@github.com:robinrob/fundamental-origins-dev.git
-[submodule "projects/angular-test"]
-	path = projects/angular-test
-	url = git@github.com:robinrob/angular-test.git
