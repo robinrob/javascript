@@ -46,7 +46,7 @@
   url = git@github.com:robinrob/mobile-template.git
 [submodule "projects/orbiter"]
   path = projects/orbiter
-  url = git@github.com:robinrob/orbiter.git
+  url = git@bitbucket.org:robinrob/orbiter.git
 [submodule "projects/orbiter-lite"]
   path = projects/orbiter-lite
   url = git@github.com:robinrob/orbiter-lite.git
