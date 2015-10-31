@@ -47,9 +47,6 @@
 [submodule "projects/orbiter"]
   path = projects/orbiter
   url = git@bitbucket.org:robinrob/orbiter.git
-[submodule "projects/orbiter-lite"]
-  path = projects/orbiter-lite
-  url = git@bitbucket.org:robinrob/orbiter-lite.git
 [submodule "projects/planet-pairs"]
   path = projects/planet-pairs
   url = git@github.com:robinrob/planet-pairs.git
