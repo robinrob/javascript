@@ -13,9 +13,9 @@
 [submodule "projects/concentration-game"]
   path = projects/concentration-game
   url = git@github.com:robinrob/concentration-game.git
-[submodule "projects/consolewriter.jquery.js"]
-  path = projects/consolewriter.jquery.js
-  url = git@github.com:robinrob/consolewriter.jquery.js.git
+[submodule "projects/console-writer"]
+  path = projects/console-writer
+  url = git@bitbucket.org:robinrob/console-writer.git
 [submodule "projects/flappy-fish"]
   path = projects/flappy-fish
   url = git@github.com:robinrob/flappy-fish.git
@@ -62,3 +62,9 @@
 [submodule "projects/robinrob.github.io-dev"]
   path = projects/robinrob.github.io-dev
   url = git@github.com:robinrob/robinrob.github.io-dev.git
+[submodule "projects/runner"]
+	path = projects/runner
+	url = git@github.com:robinrob/runner.git
+[submodule "projects/orbiter-lite"]
+	path = projects/orbiter-lite
+	url = git@bitbucket.org:robinrob/orbiter-lite
