@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+"use strict"; 
+
 var global = 1;
 
 function f1() {
@@ -12,19 +14,27 @@ function f2() {
   return global;
 }
 
-function f3() {
-	msg="Hello from f3()!"
-}
-
 var a = 123;
+
 function f4() { 
   console.log(a)
   var a = 1;
   console.log(a)
+  var b = 2
 } 
 
 console.log(f1())
 console.log(f2())
-f3()
-console.log(msg)
 f4()
+console.log(a)
+
+
+{
+if (true) {
+  var c = 4
+  console.log(c)
+}
+} 
+
+console.log(c)
+
