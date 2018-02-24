@@ -50,8 +50,8 @@
   path = projects/Reader
   url = git@github.com:robinrob/reader.git
 [submodule "projects/recipes-app"]
-  path = projects/recipes-app
-  url = git@github.com:robinrob/recipes-app.git
+	path = projects/recipes-app
+	url = git@github.com:robinrob/recipes-app
 [submodule "projects/robinrob.github.io"]
   path = projects/robinrob.github.io
   url = git@github.com:robinrob/robinrob.github.io.git
