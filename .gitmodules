@@ -28,9 +28,6 @@
 [submodule "projects/interpreter"]
   path = projects/interpreter
   url = git@github.com:robinrob/interpreter.git
-[submodule "projects/jekyll-gulp-haml-sass-browsersync"]
-  path = projects/jekyll-gulp-haml-sass-browsersync
-  url = git@github.com:robinrob/jekyll-gulp-haml-sass-browsersync.git
 [submodule "projects/mobile-app-cordova"]
   path = projects/mobile-app-cordova
   url = git@github.com:robinrob/mobile-app-cordova.git
@@ -50,8 +47,8 @@
   path = projects/Reader
   url = git@github.com:robinrob/reader.git
 [submodule "projects/recipes-app"]
-	path = projects/recipes-app
-	url = git@github.com:robinrob/recipes-app
+  path = projects/recipes-app
+  url = git@github.com:robinrob/recipes-app
 [submodule "projects/robinrob.github.io"]
   path = projects/robinrob.github.io
   url = git@github.com:robinrob/robinrob.github.io.git
@@ -61,3 +58,6 @@
 [submodule "projects/runner"]
   path = projects/runner
   url = git@github.com:robinrob/runner.git
+[submodule "projects/jekyll-gulp-haml-sass-browsersync"]
+	path = projects/jekyll-gulp-haml-sass-browsersync
+	url = git@github.com:robinrob/jekyll-gulp-haml-sass-browsersync
