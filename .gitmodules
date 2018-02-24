@@ -22,9 +22,6 @@
 [submodule "projects/flappy-fish-physics"]
   path = projects/flappy-fish-physics
   url = git@github.com:robinrob/flappy-fish-physics.git
-[submodule "projects/fundamental-origins-dev"]
-  path = projects/fundamental-origins-dev
-  url = git@github.com:rsmith/fundamental-origins-dev.git
 [submodule "projects/gulpfile"]
   path = projects/gulpfile
   url = git@github.com:robinrob/gulpfile.git
@@ -68,3 +65,6 @@
 [submodule "projects/orbiter-lite"]
 	path = projects/orbiter-lite
 	url = git@bitbucket.org:robinrob/orbiter-lite
+[submodule "projects/react-tutorial"]
+	path = projects/react-tutorial
+	url = git@github.com:robinrob/react-tutorial
