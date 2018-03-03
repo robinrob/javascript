@@ -61,3 +61,6 @@
 [submodule "projects/jekyll-gulp-haml-sass-browsersync"]
 	path = projects/jekyll-gulp-haml-sass-browsersync
 	url = git@github.com:robinrob/jekyll-gulp-haml-sass-browsersync
+[submodule "projects/brainnwave-test"]
+	path = projects/brainnwave-test
+	url = git@bitbucket.org:rsmith-io/brainnwave-test
