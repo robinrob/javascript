@@ -1,0 +1,18 @@
+\---
+layout: site_page
+title: CV
+toptitle: CV
+permalink: cv/
+description: "CV/Résumé - use this page to view, print or download my CV/Résumé for personal purposes or for distribution to potential employers"
+\---
+
+
+.cv-options
+  .row.buttons
+    .col-xs-12
+      %a.print{:class => "btn btn-primary btn-sm", :href => "{{ site.baseurl }}/cv/print"} Print
+      %a.print{:class => "btn btn-primary btn-sm", :href => "{{ site.baseurl }}/{{ site.cv }}", :download => "{{site.cv}}"} Download as PDF
+
+.cv
+  {% include cv.html %}
+
