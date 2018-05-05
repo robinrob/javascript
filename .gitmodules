@@ -67,3 +67,9 @@
 [submodule "projects/runner"]
   path = projects/runner
   url = git@github.com:robinrob/runner.git
+[submodule "projects/brainnwave-test"]
+	path = projects/brainnwave-test
+	url = git@bitbucket.org:rsmith-io/brainnwave-test
+[submodule "projects/float-test-client"]
+	path = projects/float-test-client
+	url = git@bitbucket.org:rsmith-io/float-test-client
