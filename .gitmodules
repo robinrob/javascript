@@ -7,6 +7,9 @@
 [submodule "projects/bouncing-balls"]
   path = projects/bouncing-balls
   url = git@github.com:robinrob/bouncing-balls.git
+[submodule "projects/brainnwave-test"]
+  path = projects/brainnwave-test
+  url = git@bitbucket.org:rsmith-io/brainnwave-test
 [submodule "projects/cocos-examples"]
   path = projects/cocos-examples
   url = git@github.com:robinrob/cocos-examples.git
@@ -22,6 +25,9 @@
 [submodule "projects/flappy-fish-physics"]
   path = projects/flappy-fish-physics
   url = git@github.com:robinrob/flappy-fish-physics.git
+[submodule "projects/float-test-client"]
+  path = projects/float-test-client
+  url = git@bitbucket.org:rsmith-io/float-test-client
 [submodule "projects/gulpfile"]
   path = projects/gulpfile
   url = git@github.com:robinrob/gulpfile.git
@@ -67,9 +73,3 @@
 [submodule "projects/runner"]
   path = projects/runner
   url = git@github.com:robinrob/runner.git
-[submodule "projects/brainnwave-test"]
-	path = projects/brainnwave-test
-	url = git@bitbucket.org:rsmith-io/brainnwave-test
-[submodule "projects/float-test-client"]
-	path = projects/float-test-client
-	url = git@bitbucket.org:rsmith-io/float-test-client
