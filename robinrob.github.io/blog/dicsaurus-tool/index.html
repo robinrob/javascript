@@ -1,0 +1,160 @@
+<!DOCTYPE html><html lang=en><head><script src=/js/scripts.js></script><script>
+  let production_hostname = 'rsmith.io'
+  //let production_hostname = 'localhost'
+  if (window.location.hostname === production_hostname) {
+    console.log("Production GA will load");
+    $.getScript(
+      '/js/header_scripts.js',
+      function() { console.log("Production GA loaded!") }
+    )
+  }
+</script><meta charset=utf-8><meta content=utf-8 name=content-type><meta content="text/html; charset=UTF-8" http-equiv=Content-Type><meta content="IE=edge" http-equiv=X-UA-Compatible><meta content="width=device-width, initial-scale=1" name=viewport><meta content="Blog Post: Dicsaurus - A Command-Line Dictionary & Thesaurus Tool" name=description><meta content="Freelance developer, Edinburgh, mobile, web, AngularJS, PhoneGap, SEO, Heroku, AWS, Google Apps, JavaScript, Force.com, Salesforce" name=keywords><title>Dicsaurus</title><link href=https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css rel=stylesheet type=text/css><link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel=stylesheet type=text/css><link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel=stylesheet type=text/css><link href=/css/styles.css rel=stylesheet><link href=/img/favicon.gif rel=icon type=image/gif><link href="https://rsmith.io/blog/dicsaurus-tool//" rel=canonical></head><body><nav class="navbar navbar-default navbar-custom navbar-fixed-top"><div class=container-fluid><div class="navbar-header page-scroll"><button class=navbar-toggle data-target=#bs-example-navbar-collapse-1 data-toggle=collapse type=button><span class=sr-only>Toggle navigation</span> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span></button></div><div class="collapse navbar-collapse" id=bs-example-navbar-collapse-1><ul class="nav navbar-nav"><li><a href="/"><span>Home page of Robin Smith's site</span> Home</a></li><li><a href=/#services><span>View software services that Robin Smith offers</span> Services</a></li><li><a href=/#projects><span>View projects that Robin Smith has previous worked on</span> Projects</a></li><li><a href=/#endorsements><span>View Robin Smith's endorsements</span> Endorsements</a></li><li><a href=/contact><span>Use contact form to contact Robin Smith</span> Contact</a></li><li><a href=/cv><span>View Robin Smith's CV</span> CV</a></li><li><a href=/blog><span>Read Robin Smith's Software development blog</span> Blog</a></li></ul></div></div></nav><header class=intro-header><div class="container post-heading"><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><h1>Dicsaurus</h1><h2 class=subheading>A Command-Line Dictionary & Thesaurus Tool</h2></div></div></div></header><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div class=main><div class=blog><article><p>I&#39;ve created a small tool named <a href=https://github.com/robinrob/dicsaurus>Dicsaurus</a>, out of a need to quickly look up words and synonyms for words, and out of a desire to make it as painless as possible.</p><p>Previously I was using the command-line <code>dict</code> tool in OS X, and for thesaurus just a ZSH function opening <a href="http://www.thesaurus.com/">thesaurus.com</a> in a browser, with the search term encoded into a URL parameter.</p><p>Dicsaurus is a simple python script that makes HTTP callouts to <a href="https://developer.oxforddictionaries.com/">Oxford Dictionaries API</a>. It currently works in two modes: dictionary and thesaurus. The <a href=https://github.com/robinrob/dicsaurus/blob/master/README.md>readme</a> explains how to set it up, including registering a developer account at <a href=https://developer.oxforddictionaries.com>developer.oxforddictionaries.com</a>.</p><h2>Example usage in dictionary mode</h2><p>The word &#39;blue&#39; turns out to be a good test word for both dictionary and thesaurus modes.</p><p>Command: <code>./dicsaurus.py -t blue</code></p><p>Output:</p><div class=highlight><pre><code class=language-plaintext data-lang=plaintext>Results from Oxford University Press:
+
+Definition(s) for 'blue'
+
+   blue (Adjective)
+
+      Example(s):
+         a blue silk shirt
+         the clear blue sky
+         deep blue eyes
+         he's feeling blue
+         a blue movie
+         the successful blue candidate
+
+      Etomologie(s):
+         Middle English: from Old French bleu, ultimately of Germanic origin and related to Old English blǣwen ‘blue’ and Old Norse blár ‘dark blue’ (see also blaeberry)
+
+
+   blue (Noun)
+
+      Example(s):
+         she was dressed in blue
+         armchairs in pastel blues and greens
+         the dark blue of his eyes
+         a flyweight boxing blue
+         did you have a blue or what?
+         his tactical blue in saying the opposition wasn't ready to govern
+         only an Aussie could make a red-headed man ‘Blue.’
+
+
+   blue (Verb)
+
+      Example(s):
+         blued paper
+         the day would haze, the air bluing with afternoon
+         the light dims, bluing the retina
+         they blued the shirts and starched the uniforms
+
+      Etomologie(s):
+         mid 19th century: perhaps a variant of blow&lt;/code&gt;&lt;/pre&gt;
+</code></pre></div><h2>Example usage in thesaurus mode</h2><p>Command: <code>./dicsaurus.py -t blue</code></p><p>Output:</p><div class=highlight><pre><code class=language-plaintext data-lang=plaintext>Results from Oxford University Press:
+
+Synonym(s) for 'blue'
+
+   blue (Adjective)
+
+      Snynoym(s):
+         sky-blue
+         azure
+         cobalt
+         cobalt blue
+         sapphire
+         cerulean
+         navy
+         navy blue
+         saxe
+         saxe blue
+         Oxford blue
+         Cambridge blue
+         ultramarine
+         lapis lazuli
+         indigo
+         aquamarine
+         turquoise
+         teal
+         teal blue
+         cyan
+         of the colour of the sky
+         of the colour of the sea
+
+      Example(s):
+         she had bright blue eyes
+
+      Snynoym(s):
+         depressed
+         down
+         sad
+         saddened
+         unhappy
+         melancholy
+         miserable
+         sorrowful
+         gloomy
+         dejected
+         downhearted
+         disheartened
+         despondent
+         dispirited
+         low
+         in low spirits
+         low-spirited
+         heavy-hearted
+         glum
+         morose
+         dismal
+         downcast
+         cast down
+         tearful
+
+      Example(s):
+         Dad had died that year and Mum was feeling a bit blue
+
+      Snynoym(s):
+         indecent
+         dirty
+         rude
+         coarse
+         vulgar
+         bawdy
+         lewd
+         racy
+         risqué
+         salacious
+         naughty
+         wicked
+         improper
+         unseemly
+         smutty
+         spicy
+         raw
+         off colour
+         ribald
+         Rabelaisian
+
+      Example(s):
+         a blue movie
+
+</code></pre></div><hr><span class=post-meta>Posted by Robin Smith on January 19, 2018</span></article><hr><ul class=pager><li class=previous><a data-placement=top data-toggle=tooltip href="/blog/python-3-6-string-interpolation/" title="Python 3.6 String Interpolation">&larr; Previous Post</a></li><li class=next><a data-placement=top data-toggle=tooltip href="/blog/when-to-write-unit-tests/" title="When Should You Write Unit Tests?">Next Post &rarr;</a></li></ul><div id=disqus_thread></div><script>
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://rsmith-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript></div></div></div></div></div><footer><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><ul class="list-inline text-center"><li><a href=mailto:robin@rsmith.io target=_blank><span>Send email to Robin Smith</span> <span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-envelope fa-stack-1x fa-inverse"></i></span></a></li><li><a href=https://github.com/robinrob target=_blank><span>Github page of Robin Smith</span> <span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-github fa-stack-1x fa-inverse"></i></span></a></li><li><a href=https://uk.linkedin.com/in/rsmithio target=_blank><span>LinkedIn profile page of Robin Smith</span> <span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i></span></a></li></ul><p class="copyright text-muted">Copyright © Robin Smith 2018</p></div></div></div></footer><script src=/js/scripts.js>
+<script>
+  let production_hostname = 'rsmith.io'
+  //let production_hostname = 'localhost'
+  if (window.location.hostname === production_hostname) {
+    console.log("Production GA will load");
+    $.getScript(
+      '/js/header_scripts.js',
+      function() { console.log("Production GA loaded!") }
+    )
+  }
+</script></body></html>

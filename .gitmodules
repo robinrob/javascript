@@ -41,8 +41,8 @@
   path = projects/planet-pairs
   url = git@github.com:robinrob/planet-pairs.git
 [submodule "projects/react-tutorial"]
-  path = projects/react-tutorial
-  url = git@github.com:robinrob/react-tutorial
+	path = projects/react-tutorial
+	url = git@github.com:robinrob/react-tutorial
 [submodule "projects/Reader"]
   path = projects/Reader
   url = git@github.com:robinrob/reader.git

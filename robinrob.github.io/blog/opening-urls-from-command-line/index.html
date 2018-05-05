@@ -1,0 +1,47 @@
+<!DOCTYPE html><html lang=en><head><script src=/js/scripts.js></script><script>
+  let production_hostname = 'rsmith.io'
+  //let production_hostname = 'localhost'
+  if (window.location.hostname === production_hostname) {
+    console.log("Production GA will load");
+    $.getScript(
+      '/js/header_scripts.js',
+      function() { console.log("Production GA loaded!") }
+    )
+  }
+</script><meta charset=utf-8><meta content=utf-8 name=content-type><meta content="text/html; charset=UTF-8" http-equiv=Content-Type><meta content="IE=edge" http-equiv=X-UA-Compatible><meta content="width=device-width, initial-scale=1" name=viewport><meta content="Blog Post: Opening web URLs from the command-line - A ZSH function for quickly opening URLs" name=description><meta content="Freelance developer, Edinburgh, mobile, web, AngularJS, PhoneGap, SEO, Heroku, AWS, Google Apps, JavaScript, Force.com, Salesforce" name=keywords><title>Opening web URLs from the command-line</title><link href=https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css rel=stylesheet type=text/css><link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel=stylesheet type=text/css><link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel=stylesheet type=text/css><link href=/css/styles.css rel=stylesheet><link href=/img/favicon.gif rel=icon type=image/gif><link href="https://rsmith.io/blog/opening-urls-from-command-line//" rel=canonical></head><body><nav class="navbar navbar-default navbar-custom navbar-fixed-top"><div class=container-fluid><div class="navbar-header page-scroll"><button class=navbar-toggle data-target=#bs-example-navbar-collapse-1 data-toggle=collapse type=button><span class=sr-only>Toggle navigation</span> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span></button></div><div class="collapse navbar-collapse" id=bs-example-navbar-collapse-1><ul class="nav navbar-nav"><li><a href="/"><span>Home page of Robin Smith's site</span> Home</a></li><li><a href=/#services><span>View software services that Robin Smith offers</span> Services</a></li><li><a href=/#projects><span>View projects that Robin Smith has previous worked on</span> Projects</a></li><li><a href=/#endorsements><span>View Robin Smith's endorsements</span> Endorsements</a></li><li><a href=/contact><span>Use contact form to contact Robin Smith</span> Contact</a></li><li><a href=/cv><span>View Robin Smith's CV</span> CV</a></li><li><a href=/blog><span>Read Robin Smith's Software development blog</span> Blog</a></li></ul></div></div></nav><header class=intro-header><div class="container post-heading"><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><h1>Opening web URLs from the command-line</h1><h2 class=subheading>A ZSH function for quickly opening URLs</h2></div></div></div></header><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div class=main><div class=blog><article><p>Peter Stephenson&#39;s <a href=http://zsh.sourceforge.net/Guide/zshguide.html><em>A User&#39;s Guide to the Z-Shell</em></a> is a great way to learn about the Z-Shell in detail. I went through most of it a few years ago, interested to see what I would find through this exploratory method of learning - as opposed to looking something up specifically to achieve a certain task.</p><p>Having never studied the features of any shell environment in detail, I learned about many interesting and useful features of the Z-Shell, some specific to Z-Shell and some not.</p><p>I <a href=blog/personal-automation-as-code-practice>mentioned before</a> that through learning about ZSH and a desire for automation I have used it extensively to automate lots of things, and really use the command-line as a multi-purpose tool in general life for digital tasks as well as in work.</p><p>Because I was resorting to the command-line so habitually for everything, I&#39;d sometimes find myself pasting web URLs onto the command-line in the hope of opening them up in a web browser! Of course I&#39;d get the &quot;command not found&quot; message and feel silly. But one day I thought it would be a cool challenge to see if I could find a way to reliably open up URLs like this, whilst not messing up ordinary command-line functionality.</p><p>The thought was partially inspired by the fact that I&#39;d already customised the error message that is printed when a bad command is printed. When I type a wrong command I see:</p><pre><code class=plaintext>robin@mercury ~/ ⚡  i_am_an_idiot
+zsh: command not found you nutter!: i_am_an_idiot</code></pre><p>This response is customised by implementing the <code>command_not_found_handler</code> function in Z-Shell.</p><p>Mine is:</p><pre><code class=shell>command_not_found_handler () {
+    local +r Command=$1
+    if $(is_http_url $Command)
+    then
+        safari $Command
+    else
+        print "zsh: command not found you nutter!: $@"
+    fi
+}</code></pre><p>Where the <code>is_http_url</code> function is just:</p><pre><code class=shell>is_http_url () {
+    local +r String=$1
+    [[ $String[1,4] == 'http' ]] && return 0 || return 1
+}</code></pre><p>And the <code>safari</code> function:</p><pre><code class=shell>safari () {
+    open -a Safari $1
+}</code></pre><p>I am specifically using Safari for these URLs just because I found I am most of the time wanting to open an article with lots of text to read, and I love using the Reader feature of Safari for that.</p><p>It&#39;s a simple enough solution but one that works reliably and that I use all the time.</p><hr><span class=post-meta>Posted by Robin Smith on March 16, 2018</span></article><hr><ul class=pager><li class=previous><a data-placement=top data-toggle=tooltip href="/blog/getting-started-with-ocaml/" title="Getting started with OCaml">&larr; Previous Post</a></li></ul><div id=disqus_thread></div><script>
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://rsmith-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript></div></div></div></div></div><footer><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><ul class="list-inline text-center"><li><a href=mailto:robin@rsmith.io target=_blank><span>Send email to Robin Smith</span> <span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-envelope fa-stack-1x fa-inverse"></i></span></a></li><li><a href=https://github.com/robinrob target=_blank><span>Github page of Robin Smith</span> <span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-github fa-stack-1x fa-inverse"></i></span></a></li><li><a href=https://uk.linkedin.com/in/rsmithio target=_blank><span>LinkedIn profile page of Robin Smith</span> <span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i></span></a></li></ul><p class="copyright text-muted">Copyright © Robin Smith 2018</p></div></div></div></footer><script src=/js/scripts.js>
+<script>
+  let production_hostname = 'rsmith.io'
+  //let production_hostname = 'localhost'
+  if (window.location.hostname === production_hostname) {
+    console.log("Production GA will load");
+    $.getScript(
+      '/js/header_scripts.js',
+      function() { console.log("Production GA loaded!") }
+    )
+  }
+</script></body></html>
