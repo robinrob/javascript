@@ -52,9 +52,6 @@
 [submodule "projects/quiz-react"]
   path = projects/quiz-react
   url = git@github.com:robinrob/quiz-react
-[submodule "projects/react-tutorial"]
-  path = projects/react-tutorial
-  url = git@github.com:robinrob/react-tutorial
 [submodule "projects/Reader"]
   path = projects/Reader
   url = git@github.com:robinrob/reader.git
