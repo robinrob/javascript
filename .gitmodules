@@ -49,6 +49,9 @@
 [submodule "projects/planet-pairs"]
   path = projects/planet-pairs
   url = git@github.com:robinrob/planet-pairs.git
+[submodule "projects/quiz-react"]
+  path = projects/quiz-react
+  url = git@github.com:robinrob/quiz-react
 [submodule "projects/react-tutorial"]
   path = projects/react-tutorial
   url = git@github.com:robinrob/react-tutorial
@@ -60,13 +63,13 @@
   url = git@github.com:robinrob/recipes-app
 [submodule "projects/robinrob.github.io"]
   path = projects/robinrob.github.io
-  url = git@github.com:robinrob/robinrob.github.io.git
+  url = git@github.com:robinrob/robinrob.github.io
 [submodule "projects/robinrob.github.io-dev"]
   path = projects/robinrob.github.io-dev
   url = git@github.com:robinrob/robinrob.github.io-dev.git
+[submodule "projects/rsmithio"]
+  path = projects/rsmithio
+  url = git@github.com:robinrob/rsmithio
 [submodule "projects/runner"]
   path = projects/runner
   url = git@github.com:robinrob/runner.git
-[submodule "projects/rsmithio"]
-	path = projects/rsmithio
-	url = git@github.com:robinrob/rsmithio
