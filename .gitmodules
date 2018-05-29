@@ -7,6 +7,9 @@
 [submodule "projects/bouncing-balls"]
   path = projects/bouncing-balls
   url = git@github.com:robinrob/bouncing-balls.git
+[submodule "projects/brainnwave-test"]
+  path = projects/brainnwave-test
+  url = git@bitbucket.org:rsmith-io/brainnwave-test
 [submodule "projects/cocos-examples"]
   path = projects/cocos-examples
   url = git@github.com:robinrob/cocos-examples.git
@@ -22,12 +25,18 @@
 [submodule "projects/flappy-fish-physics"]
   path = projects/flappy-fish-physics
   url = git@github.com:robinrob/flappy-fish-physics.git
+[submodule "projects/float-test-client"]
+  path = projects/float-test-client
+  url = git@bitbucket.org:rsmith-io/float-test-client
 [submodule "projects/gulpfile"]
   path = projects/gulpfile
   url = git@github.com:robinrob/gulpfile.git
 [submodule "projects/interpreter"]
   path = projects/interpreter
   url = git@github.com:robinrob/interpreter.git
+[submodule "projects/jekyll-gulp-haml-sass-browsersync"]
+  path = projects/jekyll-gulp-haml-sass-browsersync
+  url = git@github.com:robinrob/jekyll-gulp-haml-sass-browsersync
 [submodule "projects/mobile-app-cordova"]
   path = projects/mobile-app-cordova
   url = git@github.com:robinrob/mobile-app-cordova.git
@@ -58,21 +67,6 @@
 [submodule "projects/runner"]
   path = projects/runner
   url = git@github.com:robinrob/runner.git
-[submodule "projects/jekyll-gulp-haml-sass-browsersync"]
-	path = projects/jekyll-gulp-haml-sass-browsersync
-	url = git@github.com:robinrob/jekyll-gulp-haml-sass-browsersync
-[submodule "projects/brainnwave-test"]
-	path = projects/brainnwave-test
-	url = git@bitbucket.org:rsmith-io/brainnwave-test
-[submodule "projects/float-test-client"]
-	path = projects/float-test-client
-	url = git@bitbucket.org:rsmith-io/float-test-client
-[submodule "projects/camera-tracking-example"]
-	path = projects/camera-tracking-example
-	url = git@github.com:robinrob/camera-tracking-example
 [submodule "projects/rsmithio"]
 	path = projects/rsmithio
 	url = git@github.com:robinrob/rsmithio
-[submodule "projects/quiz-react"]
-	path = projects/quiz-react
-	url = git@github.com:robinrob/quiz-react
