@@ -67,3 +67,12 @@
 [submodule "projects/float-test-client"]
 	path = projects/float-test-client
 	url = git@bitbucket.org:rsmith-io/float-test-client
+[submodule "projects/camera-tracking-example"]
+	path = projects/camera-tracking-example
+	url = git@github.com:robinrob/camera-tracking-example
+[submodule "projects/rsmithio"]
+	path = projects/rsmithio
+	url = git@github.com:robinrob/rsmithio
+[submodule "projects/quiz-react"]
+	path = projects/quiz-react
+	url = git@github.com:robinrob/quiz-react
