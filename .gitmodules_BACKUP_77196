@@ -52,9 +52,6 @@
 [submodule "projects/quiz-react"]
   path = projects/quiz-react
   url = git@github.com:robinrob/quiz-react
-[submodule "projects/react-tutorial"]
-  path = projects/react-tutorial
-  url = git@github.com:robinrob/react-tutorial
 [submodule "projects/Reader"]
   path = projects/Reader
   url = git@github.com:robinrob/reader.git
@@ -71,11 +68,19 @@
   path = projects/rsmithio
   url = git@github.com:robinrob/rsmithio
 [submodule "projects/runner"]
-	path = projects/runner
-	url = git@github.com:robinrob/runner
+<<<<<<< HEAD
+  path = projects/runner
+  url = git@github.com:robinrob/runner.git
 [submodule "projects/adhdevelopers"]
 	path = projects/adhdevelopers
 	url = git@github.com:robinrob/adhdevelopers
 [submodule "projects/guitar-chords"]
 	path = projects/guitar-chords
 	url = git@github.com:robinrob/guitar-chords
+=======
+	path = projects/runner
+	url = git@github.com:robinrob/runner
+[submodule "projects/orbiter-new"]
+	path = projects/orbiter-new
+	url = git@github.com:robinrob/orbiter-new
+>>>>>>> c54baa17c06f57460440cd1f5610e7142ea9a61c
