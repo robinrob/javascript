@@ -79,3 +79,6 @@
 [submodule "projects/runner"]
   path = projects/runner
   url = git@github.com:robinrob/runner
+[submodule "projects/cocos-hello-world"]
+	path = projects/cocos-hello-world
+	url = git@github.com:robinrob/cocos-hello-world
