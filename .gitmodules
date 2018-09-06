@@ -73,3 +73,9 @@
 [submodule "projects/runner"]
   path = projects/runner
   url = git@github.com:robinrob/runner.git
+[submodule "projects/adhdevelopers"]
+	path = projects/adhdevelopers
+	url = git@github.com:robinrob/adhdevelopers
+[submodule "projects/guitar-chords"]
+	path = projects/guitar-chords
+	url = git@github.com:robinrob/guitar-chords
