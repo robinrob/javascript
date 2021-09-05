@@ -82,3 +82,6 @@
 [submodule "projects/cocos-hello-world"]
 	path = projects/cocos-hello-world
 	url = git@github.com:robinrob/cocos-hello-world
+[submodule "projects/robinrob"]
+	path = projects/robinrob
+	url = git@github.com:robinrob/robinrob.git
