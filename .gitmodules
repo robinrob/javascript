@@ -16,6 +16,9 @@
 [submodule "projects/cocos-examples"]
   path = projects/cocos-examples
   url = git@github.com:robinrob/cocos-examples
+[submodule "projects/cocos-hello-world"]
+  path = projects/cocos-hello-world
+  url = git@github.com:robinrob/cocos-hello-world
 [submodule "projects/concentration-game"]
   path = projects/concentration-game
   url = git@github.com:robinrob/concentration-game
@@ -79,9 +82,3 @@
 [submodule "projects/runner"]
   path = projects/runner
   url = git@github.com:robinrob/runner
-[submodule "projects/cocos-hello-world"]
-	path = projects/cocos-hello-world
-	url = git@github.com:robinrob/cocos-hello-world
-[submodule "projects/robinrob"]
-	path = projects/robinrob
-	url = git@github.com:robinrob/robinrob.git
